@@ -8,7 +8,7 @@ docker run \
   --env=DRONE_RUNNER_CAPACITY=2 \
   --env=DRONE_SERVER_HOST={% your_drone_server_host %} \
   --env=DRONE_SERVER_PROTO={% your_drone_server_protocol %} \
-  --env=DRONE_TLS_AUTOCERT=true \
+  --env=DRONE_TLS_AUTOCERT=false \
   --env=DRONE_NOMAD_ENABLED=true \
   --env=DRONE_NOMAD_IMAGE_PULL=true \
   --env=NOMAD_ADDR=http://127.0.0.1:4646 \
