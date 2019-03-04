@@ -19,7 +19,7 @@ docker run \
   --env=NOMAD_CAPATH="/ssl" \
   --env=NOMAD_CACERT="/ssl/ca.pem" \
   --env=NOMAD_REGION="global" \
-  --env=DRONE_NOMAD_IMAGE=drone/controller:latest
+  --env=DRONE_NOMAD_IMAGE=drone/controller:latest \
   --publish=80:80 \
   --publish=443:443 \
   --restart=always \
