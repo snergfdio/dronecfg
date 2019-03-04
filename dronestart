@@ -1,0 +1,37 @@
+docker run \
+  --volume=/var/run/docker.sock:/var/run/docker.sock \
+  --volume=/var/lib/drone:/data \
+  --volume=/etc/nomad.d/ssl:/ssl \
+  --env=DRONE_GITHUB_SERVER=https://github.com \
+  --env=DRONE_GITHUB_CLIENT_ID={% your-github-client-id %} \
+  --env=DRONE_GITHUB_CLIENT_SECRET={% your-github-client-secret %} \
+  --env=DRONE_RUNNER_CAPACITY=2 \
+  --env=DRONE_SERVER_HOST={% your-drone-server-host %} \
+  --env=DRONE_SERVER_PROTO={% your-drone-server-protocol %} \
+  --env=DRONE_TLS_AUTOCERT=true \
+  --env=DRONE_NOMAD_ENABLED=true \
+  --env=DRONE_NOMAD_IMAGE_PULL=true \
+  --env=NOMAD_ADDR=http://127.0.0.1:4646 \
+  --env=NOMAD_TOKEN={% your-nomad-token %} \
+  --env=NOMAD_SKIP_VERIFY=true \
+  --env=NOMAD_CLIENT_KEY="/ssl/nomad-key.pem" \
+  --env=NOMAD_CLIENT_CERT="/ssl/nomad.pem" \
+  --env=NOMAD_CAPATH="/ssl" \
+  --env=NOMAD_CACERT="/ssl/ca.pem" \
+  --env=NOMAD_REGION="yul1" \
+  --env=DRONE_NOMAD_IMAGE=drone/controller:latest
+  --publish=80:80 \
+  --publish=443:443 \
+  --restart=always \
+  --detach=true \
+  --name=drone \
+  drone/drone:linux-amd64
+
+
+
+
+
+export your-github-client-id=""
+export your-github-client-secret=""
+export your-drone-server-host=""
+export your-drone-server-protocol="https"
