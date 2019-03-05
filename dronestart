@@ -4,6 +4,7 @@ docker run \
   --env=DRONE_GITHUB_SERVER=https://github.com \
   --env=DRONE_GITHUB_CLIENT_ID=$your_github_client_id \
   --env=DRONE_GITHUB_CLIENT_SECRET=$your_github_client_secret \
+  --env=DRONE_STATUS_NAME="csit/drone" \
   --env=DRONE_RUNNER_CAPACITY=2 \
   --env=DRONE_SERVER_HOST=$your_drone_server_host \
   --env=DRONE_SERVER_PROTO=$your_drone_server_protocol \
