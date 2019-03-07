@@ -13,8 +13,8 @@ docker run \
   --env=DRONE_NOMAD_ENABLED=true \
   --env=DRONE_NOMAD_IMAGE_PULL=true \
   --env=DRONE_RPC_PROTO=http \
-  --env=DRONE_RPC_HOST=$drone_server_host \
-  --env=DRONE_RPC_SECRET=$drone_rpc_secret \
+  --env=DRONE_RPC_HOST=$your_drone_server_host \
+  --env=DRONE_RPC_SECRET=$your_drone_rpc_secret \
   --env=NOMAD_ADDR=http://nomad.fdiopoc.net:4646 \
   --env=NOMAD_TOKEN=$your_nomad_token \
   --env=NOMAD_SKIP_VERIFY=true \
