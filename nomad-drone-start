@@ -26,6 +26,7 @@ docker run \
   --env=NOMAD_REGION="global" \
   --env=DRONE_NOMAD_DATACENTER="yul1" \
   --env=DRONE_NOMAD_IMAGE=drone/controller:linux-amd64 \
+  --network=ngrok-drone \
   --restart=always \
   --detach=true \
   --name=drone \
