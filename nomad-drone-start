@@ -7,7 +7,7 @@ docker run \
   --env=DRONE_GITHUB_CLIENT_SECRET=$your_github_client_secret \
   --env=DRONE_STATUS_NAME="csit/drone" \
   --env=DRONE_RUNNER_CAPACITY=2 \
-  --env=DRONE_ADMIN="snergfdio" \
+  --env=DRONE_USER_CREATE="username:snergfdio,admin:true" \
   --env=DRONE_SERVER_HOST=$your_drone_server_host \
   --env=DRONE_SERVER_PROTO=$your_drone_server_protocol \
   --env=DRONE_TLS_AUTOCERT=false \
