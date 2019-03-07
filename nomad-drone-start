@@ -12,7 +12,10 @@ docker run \
   --env=DRONE_TLS_AUTOCERT=false \
   --env=DRONE_NOMAD_ENABLED=true \
   --env=DRONE_NOMAD_IMAGE_PULL=true \
-  --env=NOMAD_ADDR=http://10.30.51.38:4646 \
+  --env=DRONE_RPC_PROTO=http \
+  --env=DRONE_RPC_HOST=$drone_server_host \
+  --env=DRONE_RPC_SECRET=$drone_rpc_secret \
+  --env=NOMAD_ADDR=http://nomad.fdiopoc.net:4646 \
   --env=NOMAD_TOKEN=$your_nomad_token \
   --env=NOMAD_SKIP_VERIFY=true \
   --env=NOMAD_CLIENT_KEY="/ssl/nomad-key.pem" \
@@ -21,9 +24,7 @@ docker run \
   --env=NOMAD_CACERT="/ssl/ca.pem" \
   --env=NOMAD_REGION="global" \
   --env=DRONE_NOMAD_DATACENTER="yul1" \
-  --env=DRONE_NOMAD_IMAGE=drone/controller:linux-arm64 \
-  --publish=80:80 \
-  --publish=443:443 \
+  --env=DRONE_NOMAD_IMAGE=drone/controller:linux-amd64 \
   --restart=always \
   --detach=true \
   --name=drone \
@@ -31,7 +32,8 @@ docker run \
 
 
 
-
+  --publish=80:80 \
+  --publish=443:443 \
   --env=NOMAD_ADDR=http://127.0.0.1:4646 \
 export your_github_client_id=""
 export your_github_client_secret=""
